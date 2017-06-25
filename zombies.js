@@ -131,7 +131,13 @@ Player.prototype.getMaxHealth = function() {
  * @param {Item/Weapon/Food} item   The item to take.
  * @return {boolean} true/false     Whether player was able to store item in pack.
  */
-
+Player.prototype.takeItem = function(item) {
+  if(this._pack.length <3) {
+    this._pack.push(item);
+    console.log(this.name + " " + item.name);
+    return true;
+  }
+};
 
 /**
  * Player Class Method => discardItem(item)
