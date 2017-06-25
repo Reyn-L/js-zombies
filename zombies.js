@@ -144,7 +144,8 @@
   if(this._pack.length < 3) {
     this._pack.push(item);
     console.log(this.name + " " + item.name);
-  }   return true;
+  }
+  return true;
 }
 
 
@@ -241,15 +242,15 @@
  * @param {Food} itemToEat  The food item to eat.
  */
  eat(itemToEat) {
-  if ( this._pack.indexOf(itemToEat) !== -1 && itemToEat instanceof Food) {
+  if (this._pack.indexOf(itemToEat) !== -1 && itemToEat instanceof Food) {
     this._pack.splice(this._pack.indexOf(itemToEat), 1);
     this.health += itemToEat.energy;
     if(this.health > this._maxHealth) {
       this.health = this._maxHealth;
     }
 
-   }
- }
+  }
+}
 
 /**
  * Player Class Method => useItem(item)
@@ -264,11 +265,11 @@
  * @param {Item/Weapon/Food} item   The item to use.
  */
  useItem(item) {
-  if ( this._pack.indexOf(item) !== -1 && item instanceof Weapon){
+  if (this._pack.indexOf(item) !== -1 && item instanceof Weapon){
     this.equip(item);
- } else if ( this._pack.indexOf(item) !== -1 && item instanceof Food) {
+  } else if (this._pack.indexOf(item) !== -1 && item instanceof Food) {
     this.eat(item);
- }
+  }
 }
 
 /**
@@ -285,14 +286,14 @@
  * @return {string/boolean}   Weapon name or false if nothing is equipped.
  */
  equippedWith() {
-  if ( !this.equipped) {
+  if (!this.equipped) {
     console.log("You are not armed");
     return false;
   } else {
     console.log(this.name + " " + this.equipped.name);
     return this.equipped.name;
   }
- }
+}
 }
 /**
  * Class => Zombie(health, strength, speed)
@@ -342,7 +343,7 @@
  * FastZombie Extends Zombie Class
  * -----------------------------
  */
-class FastZombie extends Zombie{
+ class FastZombie extends Zombie{
   constructor(health, strength, speed) {
     super(name);
     this.health = health;
@@ -378,7 +379,7 @@ class FastZombie extends Zombie{
  * StrongZombie Extends Zombie Class
  * -----------------------------
  */
-class StrongZombie extends Zombie{
+ class StrongZombie extends Zombie{
   constructor(health, strength, speed) {
     super(name);
     this.health = health;
@@ -414,7 +415,7 @@ class StrongZombie extends Zombie{
  * RangedZombie Extends Zombie Class
  * -----------------------------
  */
-class RangedZombie extends Zombie{
+ class RangedZombie extends Zombie{
   constructor(health, strength, speed) {
     super(name);
     this.health = health;
@@ -450,7 +451,7 @@ class RangedZombie extends Zombie{
  * ExplodingZombie Extends Zombie Class
  * -----------------------------
  */
-class ExplodingZombie extends Zombie{
+ class ExplodingZombie extends Zombie{
   constructor(health, strength, speed) {
     super(name);
     this.health = health;
