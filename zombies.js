@@ -94,6 +94,13 @@ function Player( name, health, strength, speed) {
   this.equipped = false;
 }
 
+Player.prototype.getPack = function() {
+  return this._pack;
+};
+
+Player.prototype.getMaxHealth = function() {
+  return this._maxHealth;
+};
 /**
  * Player Class Method => checkPack()
  * -----------------------------
@@ -191,7 +198,6 @@ function Player( name, health, strength, speed) {
  *
  * @name eat
  * @param {Food} itemToEat  The food item to eat.
- */
 
 
 /**
