@@ -272,6 +272,15 @@ Player.prototype.useItem = function(item) {
  * @name equippedWith
  * @return {string/boolean}   Weapon name or false if nothing is equipped.
  */
+Player.prototype.equippedWith = function() {
+  if (!this.equipped) {
+    console.log ("You are currently unarmed");
+    return false;
+  } else {
+    console.log (this.name + " " + this.equipped.name);
+    return this.equipped.name;
+  }
+};
 
 /**
  * Class => Zombie(health, strength, speed)
@@ -288,7 +297,13 @@ Player.prototype.useItem = function(item) {
  * @property {number} speed
  * @property {boolean} isAlive      Default value should be `true`.
  */
-
+function  Zombie (health, strength, speed) {
+  this.health = health;
+  this.strength = strength;
+  this.speed = speed;
+  this.isAlive = true;
+  var maxHealth = health;
+}
 
 /**
  * Class => FastZombie(health, strength, speed)
@@ -304,13 +319,18 @@ Player.prototype.useItem = function(item) {
  * @param {number} strength         The zombie's strength.
  * @param {number} speed            The zombie's speed.
  */
-
-
 /**
  * FastZombie Extends Zombie Class
  * -----------------------------
  */
-
+function FastZombie (health, strength, speed) {
+  this.health = health;
+  this.strength = strength;
+  this.speed = speed;
+  this.isAlive = true;
+  var maxHealth = health;
+}
+FastZombie.prototype = Object.create (Zombie.prototype);
 
 
 /**
@@ -334,7 +354,14 @@ Player.prototype.useItem = function(item) {
  * -----------------------------
  */
 
-
+function StrongZombie (health, strength, speed) {
+  this.health = health;
+  this.strength = strength;
+  this.speed = speed;
+  this.isAlive = true;
+  var maxHealth = health;
+}
+StrongZombie.prototype = Object.create (Zombie.prototype);
 
 /**
  * Class => RangedZombie(health, strength, speed)
@@ -358,7 +385,14 @@ Player.prototype.useItem = function(item) {
  */
 
 
-
+function RangedZombie (health, strength, speed) {
+  this.health = health;
+  this.strength = strength;
+  this.speed = speed;
+  this.isAlive = true;
+  var maxHealth = health;
+}
+RangedZombie.prototype = Object.create (Zombie.prototype);
 /**
  * Class => ExplodingZombie(health, strength, speed)
  * -----------------------------
@@ -380,7 +414,14 @@ Player.prototype.useItem = function(item) {
  * -----------------------------
  */
 
-
+function ExplodingZombie (health, strength, speed) {
+  this.health = health;
+  this.strength = strength;
+  this.speed = speed;
+  this.isAlive = true;
+  var maxHealth = health;
+}
+ExplodingZombie.prototype = Object.create (Zombie.prototype);
 
 
 /**
